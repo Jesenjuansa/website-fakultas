@@ -24,7 +24,7 @@
     {{-- Berita utama: TANPA slider otomatis. Satu berita unggulan yang statis
            lebih terbaca daripada tiga berita yang berganti sendiri. --}}
     <article class="card overflow-hidden md:grid md:grid-cols-2">
-        <img src="img/berita-1.webp" alt="" width="800" height="450" loading="lazy" decoding="async"
+        <img src="img/berita-1.webp" alt="" width="800" height="450" fetchpriority="high" decoding="async"
              class="aspect-[16/9] h-full w-full object-cover">
         <div class="p-5 md:p-6">
             <p class="text-2xs font-bold uppercase tracking-wider text-accent">Berita utama · Kegiatan</p>
@@ -33,7 +33,7 @@
             </h2>
             <p class="mt-2 text-measure text-body-soft">Ringkasan dua kalimat: siapa, apa, kapan. Informasi ini yang dibaca orang di HP sebelum memutuskan membuka artikel.</p>
             <p class="mt-3 text-2xs text-body-soft"><time datetime="2026-11-20">20 November 2026</time></p>
-            <a href="berita-detail.html" class="btn btn-secondary mt-4">Baca selengkapnya</a>
+            <a href="berita-detail.html" class="btn btn-secondary mt-4">Baca berita kuliah umum</a>
         </div>
     </article>
 

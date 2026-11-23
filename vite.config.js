@@ -13,13 +13,17 @@ export default defineConfig({
     build: {
         outDir: 'public/build',
         emptyOutDir: true,
-        // CSS saja; JS halaman ini sengaja nyaris tidak ada (lihat Tahap 4:
-        // situs harus terbaca saat JS gagal dimuat).
+        // Satu-satunya JS: alat format editor. Halaman lain tetap terbaca
+        // sepenuhnya tanpa JS (lihat Tahap 4).
         rollupOptions: {
             input: {
                 app: resolve(import.meta.dirname, 'resources/css/app.css'),
+                editor: resolve(import.meta.dirname, 'resources/js/editor-format.js'),
             },
             output: {
+                // Nama tetap tanpa hash: HTML statis yang dibuka dari file://
+                // tidak bisa menebak nama berkas ber-hash.
+                entryFileNames: '[name].js',
                 assetFileNames: (info) =>
                     info.names?.[0]?.endsWith('.css') ? 'app.css' : '[name][extname]',
             },

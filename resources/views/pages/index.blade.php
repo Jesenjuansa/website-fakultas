@@ -67,10 +67,6 @@
                 <a href="akademik.html" class="btn btn-ghost-dark w-full sm:w-auto">Mahasiswa Aktif</a>
                 <a href="profil.html" class="btn btn-ghost-dark w-full sm:w-auto">Dosen &amp; Staf</a>
             </div>
-
-            <p class="mt-4 text-sm text-white/90">
-                Terakreditasi <strong class="text-white">B</strong> oleh LAM INFOKOM · Periode pendaftaran 1 Juni – 12 Desember 2026
-            </p>
         </div>
     </div>
 </section>

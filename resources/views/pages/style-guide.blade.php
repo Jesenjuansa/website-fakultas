@@ -33,8 +33,8 @@
         <p class="mt-1 text-body-soft">Angka di kanan adalah rasio kontras terhadap putih. Teks normal wajib ≥ 4,5:1; batas elemen UI ≥ 3:1.</p>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             @foreach ([
-                ['Primary — PANTONE 349 C', '#046a38', '6,72:1', 'bg-primary text-white'],
-                ['Primary hover', '#034f2a', '9,74:1', 'bg-primary-strong text-white'],
+                ['Primary (sesuai acuan)', '#338763', 'teks gelap 9,9:1', 'bg-primary text-on-primary'],
+                ['Primary hover', '#276b4f', '6,10:1 dgn putih', 'bg-primary-strong text-white'],
                 ['Aksen', '#8f4a25', '6,62:1', 'bg-accent text-white'],
                 ['Teks utama', '#1a1a1a', '17,40:1', 'bg-body text-white'],
                 ['Teks sekunder', '#4a4a4a', '8,86:1', 'bg-body-soft text-white'],
@@ -55,7 +55,7 @@
             @foreach ([['sukses', 'Pendaftaran dibuka', 'text-success', 'bg-success-soft'], ['peringatan', 'Dokumen belum lengkap', 'text-warning', 'bg-warning-soft'], ['galat', 'Berkas melebihi 5 MB', 'text-danger', 'bg-danger-soft']] as [$jenis, $teks, $warnaTeks, $warnaLatar])
                 <p class="flex items-center gap-2 rounded-sm px-3 py-2 text-sm font-semibold {{ $warnaLatar }} {{ $warnaTeks }}">
                     <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v5M12 17h.01"/><path d="M10.3 3.9 2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
-                    {{ $teks }} — status selalu ikon + kata, tidak hanya warna.
+                    {{ $teks }}: status selalu ikon + kata, tidak hanya warna.
                 </p>
             @endforeach
         </div>

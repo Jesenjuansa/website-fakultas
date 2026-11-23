@@ -181,6 +181,15 @@
     line-height: 1.2;
     letter-spacing: -0.01em;
 }
+/* Teks di atas latar hijau gelap. Dulu ditulis sebagai hex langsung di view
+   (`text-[#eaf4ef]`), sehingga ganti tema tidak ikut menyentuh footer dan hero.
+   Sekarang token: tidak ada warna keras di komponen. */
+@utility text-on-dark-soft {
+    color: #eaf4ef; /* 6,5:1 di atas #1b513c */
+}
+@utility text-on-dark-muted {
+    color: #cfe7db; /* 5,2:1 di atas #1b513c */
+}
 @utility text-hero-d {
     /* 52px: judul utama harus jadi titik fokus pertama layar; 44px kalah
        besar oleh gambar latar dan hero terasa kosong di lebar 1280. */
@@ -246,15 +255,15 @@
    Hanya dua gaya diperkuat (primary & secondary) + gaya tautan. Tiga
    tombol sama kuat di satu layar = tidak ada prioritas. */
 @layer components {
-    /* Tombol berbentuk pil dengan transisi lembut. Kotak bersudut 4px terasa
-       "tajam" di situs kampus; pil terasa lebih ramah dan tetap jelas batasnya.
-       Tinggi tetap 44px (batas nyaman ibu jari, WCAG 2.5.5). */
+    /* Tombol bersudut 8px: sudut lembut tapi tetap berbentuk kontrol, bukan
+       pil. Norma arah visual (DESIGN.md §5): pil hanya untuk chip/filter,
+       supaya bentuk ikut menyatakan jenis elemen. Tinggi tetap 44px. */
     .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        border-radius: var(--radius-pill);
+        border-radius: var(--radius-sm);
         padding: 0.75rem 1.4rem;
         font-size: var(--text-base);
         line-height: 1;
@@ -412,7 +421,7 @@
         top: 1rem;
         bottom: 1rem;
         width: 3px;
-        border-radius: var(--radius-pill);
+        border-radius: 2px;
         background: var(--color-accent);
     }
 
@@ -481,12 +490,10 @@
     .hint {
         @apply mb-2 mt-1 block text-sm text-body-soft;
     }
-    /* Input memakai pil yang sama dengan tombol: sebelumnya tombol pil dan
-       input bersudut 8px tampak tidak satu bahasa di baris yang sama. */
     .input {
         @apply block w-full bg-page px-4 py-2.5 text-base text-body;
         border: 1px solid var(--color-line-strong);
-        border-radius: var(--radius-pill);
+        border-radius: var(--radius-sm);
         min-height: 44px;
         color: var(--color-body);
         transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;

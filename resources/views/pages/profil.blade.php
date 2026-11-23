@@ -26,7 +26,7 @@
 
             {{-- 2. Tentang fakultas --}}
             <section aria-labelledby="tentang">
-                <h2 id="tentang" class="text-2xl font-bold">Tentang fakultas</h2>
+                <h2 id="tentang" class="text-2xl font-semibold">Tentang fakultas</h2>
                 {{-- Dibungkus .text-measure: baris maks 70 karakter agar
                      tidak melebar di desktop 1280px. --}}
                 <div class="prose-article mt-4 text-measure">
@@ -44,11 +44,11 @@
 
             {{-- 3. Visi & misi --}}
             <section aria-labelledby="visi" class="mt-10">
-                <h2 id="visi" class="text-2xl font-bold">Visi &amp; misi</h2>
+                <h2 id="visi" class="text-2xl font-semibold">Visi &amp; misi</h2>
                 <p class="mt-3 text-measure rounded-md border-l-4 border-primary bg-primary-soft p-4 text-base font-semibold text-primary-strong">
                     “Menjadi fakultas rujukan bidang komputasi di tingkat nasional pada tahun 2035 (teks contoh).”
                 </p>
-                <h3 class="mt-5 text-lg font-bold">Misi</h3>
+                <h3 class="mt-5 text-lg font-semibold">Misi</h3>
                 <ol class="mt-2 list-decimal space-y-2 pl-6 text-measure">
                     <li>Menyelenggarakan pendidikan komputasi yang relevan dengan kebutuhan industri.</li>
                     <li>Mengembangkan penelitian yang memberi manfaat bagi masyarakat.</li>
@@ -59,7 +59,7 @@
 
             {{-- 4. Pimpinan: halaman #pimpinan dituju dari submenu --}}
             <section id="pimpinan" class="mt-10 scroll-mt-24">
-                <h2 class="text-2xl font-bold">Pimpinan fakultas</h2>
+                <h2 class="text-2xl font-semibold">Pimpinan fakultas</h2>
                 <ul class="mt-4 grid gap-4 sm:grid-cols-2">
                     @foreach ([['Dekan', 'Dr. Contoh Nama Satu, S.Kom., M.Kom.'], ['Wakil Dekan I (Akademik)', 'Dr. Contoh Nama Dua, S.T., M.T.'], ['Wakil Dekan II (Umum & Keuangan)', 'Contoh Nama Tiga, S.Kom., M.M.'], ['Ketua Program Studi Informatika', 'Contoh Nama Empat, S.Kom., M.Kom.']] as [$jab, $nama])
                         <li class="card p-4">
@@ -72,7 +72,7 @@
 
             {{-- 5. Akreditasi --}}
             <section id="akreditasi" class="mt-10 scroll-mt-24">
-                <h2 class="text-2xl font-bold">Akreditasi</h2>
+                <h2 class="text-2xl font-semibold">Akreditasi</h2>
                 <div class="card mt-4 overflow-hidden">
                     {{-- Desktop: tabel. HP: daftar kartu (otomatis lewat .data-table). --}}
                     <table class="data-table">
@@ -118,7 +118,7 @@
 
             {{-- 6. Fasilitas --}}
             <section class="mt-10">
-                <h2 class="text-2xl font-bold">Fasilitas</h2>
+                <h2 class="text-2xl font-semibold">Fasilitas</h2>
                 <ul class="mt-4 grid gap-3 sm:grid-cols-2">
                     @foreach (['5 laboratorium komputer', 'Ruang baca dan akses jurnal', 'Studio kerja kelompok 24 jam', 'Layanan akademik satu pintu'] as $f)
                         <li class="flex items-start gap-2 rounded-md bg-surface p-4 text-base"><span aria-hidden="true" class="mt-0.5 font-bold text-primary">•</span>{{ $f }}</li>
@@ -128,7 +128,7 @@
 
             {{-- 7. Kontak --}}
             <section id="kontak" class="mt-10 scroll-mt-24">
-                <h2 class="text-2xl font-bold">Kontak &amp; lokasi</h2>
+                <h2 class="text-2xl font-semibold">Kontak &amp; lokasi</h2>
                 <div class="card mt-4 p-5">
                     <dl class="space-y-3 text-base">
                         <div class="flex gap-3"><dt class="w-28 shrink-0 font-semibold">Alamat</dt><dd>Jl. Contoh Raya No. 1, Kota Contoh, Provinsi Contoh 00000</dd></div>

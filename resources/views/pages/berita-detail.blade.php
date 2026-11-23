@@ -17,7 +17,7 @@
 <article class="container-page pb-10 pt-8">
     <div class="mx-auto max-w-3xl">
         <p class="text-2xs font-bold uppercase tracking-wider text-accent">Kegiatan</p>
-        <h1 class="mt-2 text-3xl font-bold leading-tight">Kuliah umum: pemanfaatan kecerdasan artifisial di sektor publik</h1>
+        <h1 class="mt-2 text-3xl font-semibold leading-tight">Kuliah umum: pemanfaatan kecerdasan artifisial di sektor publik</h1>
         <p class="mt-3 text-sm text-body-soft">
             <time datetime="2026-11-20">20 November 2026</time> · Penulis: Admin Fakultas (contoh)
         </p>
@@ -47,7 +47,7 @@
 
     {{-- Berita terkait: bermanfaat untuk menahan pengunjung, tapi tetap di bawah. --}}
     <section class="mx-auto mt-10 max-w-3xl">
-        <h2 class="text-2xl font-bold">Berita terkait</h2>
+        <h2 class="text-2xl font-semibold">Berita terkait</h2>
         <div class="mt-4 grid gap-3 sm:grid-cols-3">
             @foreach ($terkait as $b)
                 @include('components.card-berita', ['berita' => $b])

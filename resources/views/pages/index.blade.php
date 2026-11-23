@@ -23,7 +23,7 @@
      tidak terbaca di HP dan tidak bisa dihentikan pembaca layar. --}}
 {{-- Gradasi halus dari hijau PANTONE 349 ke versi lebih gelap: blok rata
      terasa berat di layar lebar. Gambar latar tetap ada di bawahnya. --}}
-<section class="relative isolate overflow-hidden text-white bg-[linear-gradient(155deg,#0a7a43_0%,#046a38_45%,#034f2a_100%)]">
+<section class="relative isolate overflow-hidden text-white bg-[linear-gradient(155deg,#357f60_0%,#2c7657_45%,#1b513c_100%)]">
     {{-- Gambar latar dipasang sebagai <img> (bukan CSS) supaya bisa diberi
          alt & width/height. Overlay gelap 90%/78% memastikan kontras teks
          putih tetap >=4.5:1 apa pun terangnya foto di bawahnya. --}}
@@ -36,14 +36,14 @@
              loading="eager" fetchpriority="high" decoding="async"
              class="absolute inset-0 -z-10 h-full w-full object-cover">
     </picture>
-    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[#02291a]/80 md:bg-[#02291a]/70"></div>
+    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[#0f2a20]/80 md:bg-[#0f2a20]/70"></div>
 
     <div class="container-page py-11 md:py-16 lg:py-20">
         <div class="max-w-3xl">
             <h1 class="mt-2 text-hero font-semibold leading-tight md:text-hero-d">
                 Fakultas Ilmu Komputer
             </h1>
-            <p class="mt-3 text-lg text-[#e9f3ec]">
+            <p class="mt-3 text-lg text-white">
                 Informasi resmi program studi, penerimaan mahasiswa baru, akademik, dan dosen.
             </p>
 
@@ -60,7 +60,7 @@
                 <a href="profil.html" class="btn btn-on-dark w-full sm:w-auto">Dosen &amp; Staf</a>
             </div>
 
-            <p class="mt-4 text-sm text-[#cfe5d8]">
+            <p class="mt-4 text-sm text-white/90">
                 Terakreditasi <strong class="text-white">B</strong> oleh LAM INFOKOM · Periode pendaftaran 1 Juni – 12 Desember 2026
             </p>
         </div>

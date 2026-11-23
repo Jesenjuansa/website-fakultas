@@ -25,7 +25,7 @@
 
     {{-- 2. BIAYA. Tabel 3 kolom, jadi tetap tabel yang nyaman di HP. --}}
     <section id="biaya" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Biaya kuliah</h2>
+        <h2 class="text-2xl font-semibold">Biaya kuliah</h2>
         <p class="mt-1 text-measure text-body-soft">Angka di bawah adalah contoh. Biaya resmi ditetapkan oleh universitas dan diumumkan dalam SK yang diunduh dari halaman ini.</p>
         <div class="card mt-4 overflow-hidden">
             <table class="data-table">
@@ -62,7 +62,7 @@
     {{-- 3. ALUR: langkah bernomor, bukan paragraf panjang. Orang mengikuti
            langkah, bukan membaca narasi. --}}
     <section id="alur" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Alur pendaftaran</h2>
+        <h2 class="text-2xl font-semibold">Alur pendaftaran</h2>
         <ol class="mt-4 space-y-3">
             @foreach ([
                 ['Isi formulir daring', 'Buka portal pendaftaran, buat akun dengan email aktif, lalu lengkapi data diri.'],
@@ -85,7 +85,7 @@
     {{-- 4. SYARAT: daftar + unduhan dengan ukuran file agar pengunjung
            jaringan lambat tahu sebelum mengklik. --}}
     <section id="syarat" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Syarat dokumen</h2>
+        <h2 class="text-2xl font-semibold">Syarat dokumen</h2>
         <ul class="mt-3 list-disc space-y-2 pl-6 text-measure">
             <li>Lulusan SMA/SMK/MA tahun 2024, 2025, atau 2026 (contoh).</li>
             <li>Ijazah atau Surat Keterangan Lulus yang dilegalisasi.</li>
@@ -108,7 +108,7 @@
 
     {{-- 5. JADWAL --}}
     <section id="jadwal-masuk" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Jadwal penting</h2>
+        <h2 class="text-2xl font-semibold">Jadwal penting</h2>
         <div class="card mt-4 overflow-hidden">
             <table class="data-table">
                 <caption class="sr-only">Tanggal penting penerimaan 2026</caption>
@@ -127,11 +127,11 @@
 
     {{-- 6. BEASISWA --}}
     <section id="beasiswa" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Beasiswa</h2>
+        <h2 class="text-2xl font-semibold">Beasiswa</h2>
         <div class="mt-3 grid gap-4 md:grid-cols-2">
             @foreach ([['Beasiswa Prestasi Akademik', 'Potongan UKT 50–100% untuk peringkat kelas teratas (contoh).'], ['Beasiswa Kurang Mampu', 'Bebas UKT dengan verifikasi dokumen ekonomi (contoh).']] as [$n, $d])
                 <div class="card p-5">
-                    <h3 class="text-lg font-bold">{{ $n }}</h3>
+                    <h3 class="text-lg font-semibold">{{ $n }}</h3>
                     <p class="mt-1 text-base text-body-soft">{{ $d }}</p>
                 </div>
             @endforeach
@@ -140,7 +140,7 @@
 
     {{-- 7. FAQ: elemen <details> = buka-tutup tanpa JavaScript. --}}
     <section id="faq" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Tanya-jawab</h2>
+        <h2 class="text-2xl font-semibold">Tanya-jawab</h2>
         <div class="mt-4 divide-y divide-line border-y border-line">
             @foreach ([
                 ['Apakah boleh mendaftar dua program studi?', 'Boleh, dengan dua akun berbeda. Satu akun hanya untuk satu prodi.'],

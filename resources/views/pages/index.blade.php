@@ -23,23 +23,28 @@
      tidak terbaca di HP dan tidak bisa dihentikan pembaca layar. --}}
 {{-- Gradasi halus dari hijau PANTONE 349 ke versi lebih gelap: blok rata
      terasa berat di layar lebar. Gambar latar tetap ada di bawahnya. --}}
-<section class="relative isolate overflow-hidden text-white bg-[linear-gradient(155deg,#357f60_0%,#2c7657_38%,rgb(27_81_60/0.72)_100%)]">
+<section class="relative isolate overflow-hidden text-white">
     {{-- Gambar latar dipasang sebagai <img> (bukan CSS) supaya bisa diberi
          alt & width/height. Overlay gelap 90%/78% memastikan kontras teks
          putih tetap >=4.5:1 apa pun terangnya foto di bawahnya. --}}
-    <picture>
+    {{-- Lapisan 1: warna merek. Ini yang terlihat bila foto gagal dimuat. --}}
+    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[linear-gradient(155deg,#357f60_0%,#2c7657_38%,#1b513c_100%)]"></div>
+    {{-- <picture> WAJIB berposisi absolut: tanpa itu ia tetap elemen inline
+         dan `z-index` pada <img> di dalamnya diabaikan, sehingga foto gedung
+         tertutup warna dasar seksi (hero tampak hijau rata). --}}
+    <picture class="absolute inset-0 -z-10 h-full w-full">
         <source srcset="img/hero-gedung.webp" type="image/webp">
         <img src="img/hero-gedung-fallback.jpg" alt=""
              width="1600" height="686"
              {{-- Gambar ini di atas lipatan: JANGAN lazy-load, kalau tidak
                   hero (yang menentukan kesan pertama) justru datang terakhir. --}}
              loading="eager" fetchpriority="high" decoding="async"
-             class="absolute inset-0 -z-10 h-full w-full object-cover">
+             class="h-full w-full object-cover">
     </picture>
     {{-- Tirai hijau: 62% di HP, 48% di desktop. Foto gedung tetap terlihat
          (hero tidak terasa kosong), sementara teks putih tetap di area gelap
          dan lolos kontras. --}}
-    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[linear-gradient(155deg,rgb(15_42_32/0.72)_0%,rgb(15_42_32/0.62)_100%)] md:bg-[linear-gradient(155deg,rgb(15_42_32/0.58)_0%,rgb(15_42_32/0.46)_100%)]"></div>
+    <div aria-hidden="true" class="absolute inset-0 -z-[5] bg-[linear-gradient(155deg,rgb(15_42_32/0.72)_0%,rgb(15_42_32/0.62)_100%)] md:bg-[linear-gradient(155deg,rgb(15_42_32/0.58)_0%,rgb(15_42_32/0.46)_100%)]"></div>
 
     <div class="container-page py-11 md:py-16 lg:py-20">
         <div class="max-w-3xl">

@@ -28,7 +28,7 @@
              class="aspect-[16/9] h-full w-full object-cover">
         <div class="p-5 md:p-6">
             <p class="text-2xs font-bold uppercase tracking-wider text-accent">Berita utama · Kegiatan</p>
-            <h2 class="mt-2 text-2xl font-bold leading-snug">
+            <h2 class="mt-2 text-2xl font-semibold leading-snug">
                 <a href="berita-detail.html" class="hover:text-primary">Kuliah umum: pemanfaatan kecerdasan artifisial di sektor publik</a>
             </h2>
             <p class="mt-2 text-measure text-body-soft">Ringkasan dua kalimat: siapa, apa, kapan. Informasi ini yang dibaca orang di HP sebelum memutuskan membuka artikel.</p>

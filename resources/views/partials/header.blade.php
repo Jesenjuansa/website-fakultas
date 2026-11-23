@@ -65,9 +65,10 @@
             {{-- Logo: teks alternatif wajib memuat nama fakultas, bukan "logo". --}}
             <a href="index.html" class="flex items-center gap-3 no-underline">
                 <span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-sm bg-primary text-white font-bold text-lg">FK</span>
+                {{-- Nama universitas sudah ada di top bar; diulang di sini
+                     membuat kepala halaman terasa penuh di layar 360px. --}}
                 <span class="leading-tight">
-                    <span class="block text-base font-bold text-body">Fakultas Ilmu Komputer</span>
-                    <span class="block text-2xs text-body-soft">Universitas Contoh Raya (Contoh)</span>
+                    <span class="block text-base font-semibold text-body">Fakultas Ilmu Komputer</span>
                 </span>
                 <span class="sr-only">— beranda</span>
             </a>

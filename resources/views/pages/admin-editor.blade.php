@@ -97,7 +97,7 @@
             {{-- Pratinjau kartu: staf melihat hasil akhirnya sebelum terbit,
                  sehingga judul panjang langsung terlihat terpotong. --}}
             <div class="card p-4">
-                <h2 class="text-sm font-bold uppercase tracking-wider text-body-soft">Pratinjau kartu di beranda</h2>
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-body-soft">Pratinjau kartu di beranda</h2>
                 <div class="mt-3">
                     @include('components.card-berita', ['berita' => [
                         'kategori' => 'Kegiatan',
@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="card p-4">
-                <h2 class="text-sm font-bold uppercase tracking-wider text-body-soft">Aturan singkat</h2>
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-body-soft">Aturan singkat</h2>
                 <ul class="mt-2 space-y-1.5 text-sm text-body">
                     <li>Judul: maks 80 karakter, tanpa huruf kapital semua.</li>
                     <li>Ringkasan: maks 200 karakter.</li>

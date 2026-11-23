@@ -77,7 +77,7 @@
                  Tombolnya bertuliskan "Menu", bukan ikon saja: pengguna
                  awam sering tidak mengenali ikon garis tiga. --}}
             <details class="lg:hidden ml-auto" data-menu>
-                <summary class="btn btn-secondary cursor-pointer list-none">
+                <summary class="btn btn-secondary min-h-11 cursor-pointer list-none">
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
                     Menu
                 </summary>
@@ -105,7 +105,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <a href="pencarian.html" class="btn btn-primary mt-3 w-full">Cari di situs</a>
+                        <a href="pencarian.html" class="btn btn-primary mt-3 w-full"><span aria-hidden="true">Cari</span><span class="sr-only">Cari di situs</span></a>
                     </div>
                 </nav>
             </details>

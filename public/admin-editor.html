@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <title>Panel Konten (contoh) · Fakultas Ilmu Komputer (Contoh)</title>
     
-    <link rel="stylesheet" href="build/app.css">
+    <link rel="stylesheet" href="build/app.css?v=349">
+    
+    <script src="build/editor.js?v=349" defer></script>
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -18,7 +20,7 @@
 
 
 
-<div class="bg-primary text-white">
+<div class="bg-primary-strong text-white">
     <div class="container-page">
         <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-1.5 text-2xs">
             
@@ -39,12 +41,12 @@
 
             
             <a href="index.html" class="flex items-center gap-3 no-underline">
-                <span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-sm bg-primary text-white font-bold text-lg">FK</span>
+                <span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-sm bg-primary text-on-primary font-bold text-lg">FK</span>
                 
                 <span class="leading-tight">
                     <span class="block text-base font-semibold text-body">Fakultas Ilmu Komputer</span>
                 </span>
-                <span class="sr-only">— beranda</span>
+                <span class="sr-only">Halaman beranda</span>
             </a>
 
             
@@ -220,7 +222,7 @@
     
 <div class="bg-page">
     <div class="container-page pb-6 pt-8 md:pb-8 md:pt-10">
-                <h1 class="text-3xl font-semibold text-body md:text-3xl-d">Panel konten — tambah berita</h1>
+                <h1 class="text-3xl font-semibold text-body md:text-3xl-d">Tambah berita baru</h1>
                     <p class="mt-3 text-measure text-lg text-body-soft">Contoh tampilan untuk staf non-teknis. Batas konten di Tahap 5 diterapkan di sini: kolom menolak isi berlebih, gambar dipotong otomatis, dan alasan setiap batas ditulis jelas.</p>
             </div>
 </div>
@@ -269,7 +271,7 @@
             
             <div class="mt-6">
                 <label for="gambar" class="label">Gambar utama</label>
-                <p class="hint" id="gambar-hint">JPG/PNG/WebP, maksimal 5 MB, disarankan lanskap. Sistem memotong otomatis ke 16:9 dari bagian tengah — jangan unggah gambar berisi tulisan kecil.</p>
+                <p class="hint" id="gambar-hint">JPG/PNG/WebP, maksimal 5 MB, disarankan lanskap. Sistem memotong otomatis ke 16:9 dari bagian tengah. Jangan unggah gambar berisi tulisan kecil.</p>
                 <input id="gambar" name="gambar" type="file" accept="image/jpeg,image/png,image/webp" class="input py-2" aria-describedby="gambar-hint">
                 <label class="mt-2 flex min-h-[44px] items-center gap-2 text-base">
                     <input type="checkbox" name="tanpa_gambar" class="h-5 w-5"> Terbitkan tanpa gambar
@@ -287,7 +289,9 @@
             <div class="mt-6">
                 <label for="isi" class="label">Isi berita</label>
                 <p class="hint">Gunakan tombol “Subjudul” untuk bagian baru. Tempel dari Word dengan tombol “Tempel tanpa format” agar warna dan ukuran huruf tidak terbawa.</p>
-                <div class="flex flex-wrap gap-1 rounded-t-sm border border-b-0 border-line-strong bg-surface p-1.5" role="toolbar" aria-label="Format teks">
+                
+                <div class="toolbar-format flex-wrap gap-1 rounded-t-sm border border-b-0 border-line-strong bg-surface p-1.5" role="toolbar" aria-label="Format teks"
+                     data-target="isi">
                                             <button type="button" class="btn btn-secondary btn-sm">Tebal</button>
                                             <button type="button" class="btn btn-secondary btn-sm">Miring</button>
                                             <button type="button" class="btn btn-secondary btn-sm">Daftar</button>
@@ -313,7 +317,12 @@
 
             <div class="mt-6 flex flex-wrap gap-3">
                 <button type="submit" class="btn btn-primary">Terbitkan</button>
-                <button type="button" class="btn btn-secondary">Simpan draf</button>
+                
+                <button type="button" class="btn btn-secondary"
+                        onclick="document.getElementById('status-draf').hidden = false; this.setAttribute('aria-disabled','true');">Simpan draf</button>
+                <p id="status-draf" class="w-full text-sm text-body" role="status" hidden>
+                    Draf belum bisa disimpan: panel ini contoh statis. Pada versi ber-server, tombol ini menyimpan tanpa menerbitkan.
+                </p>
             </div>
         </form>
 
@@ -365,17 +374,17 @@
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
                 <p class="text-base font-bold">Fakultas Ilmu Komputer</p>
-                <p class="mt-1 text-sm text-[#cfe5d8]">Universitas Contoh Raya (Contoh)</p>
-                <address class="mt-4 text-sm not-italic text-[#e9f3ec]">
+                <p class="mt-1 text-sm text-[#cfe7db]">Universitas Contoh Raya (Contoh)</p>
+                <address class="mt-4 text-sm not-italic text-[#eaf4ef]">
                     Jl. Contoh Raya No. 1, Kota Contoh, Provinsi Contoh 00000
                 </address>
-                <p class="mt-2 text-sm text-[#e9f3ec]">
+                <p class="mt-2 text-sm text-[#eaf4ef]">
                     <a class="underline" href="tel:+620000000000">(0000) 000-000</a><br>
                     <a class="underline" href="mailto:info@contoh.ac.id">info@contoh.ac.id</a>
                 </p>
             </div>
             <div>
-                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe5d8]">Tautan cepat</p>
+                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe7db]">Tautan cepat</p>
                 <ul class="mt-3 space-y-2 text-sm">
                     <li><a class="underline" href="program-studi.html">Program Studi</a></li>
                     <li><a class="underline" href="penerimaan.html">Penerimaan Mahasiswa</a></li>
@@ -384,7 +393,7 @@
                 </ul>
             </div>
             <div>
-                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe5d8]">Lainnya</p>
+                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe7db]">Lainnya</p>
                 <ul class="mt-3 space-y-2 text-sm">
                     <li><a class="underline" href="pengumuman.html">Pengumuman</a></li>
                     <li><a class="underline" href="unduhan.html">Unduhan</a></li>
@@ -393,19 +402,19 @@
                 </ul>
             </div>
             <div>
-                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe5d8]">Tentang situs</p>
+                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe7db]">Tentang situs</p>
                 <ul class="mt-3 space-y-2 text-sm">
                     <li><a class="underline" href="#">Kebijakan Privasi</a></li>
                     <li><a class="underline" href="#">Pernyataan Aksesibilitas</a></li>
                     <li><a class="underline" href="#">Peta Situs</a></li>
                 </ul>
-                <p class="mt-4 text-2xs text-[#cfe5d8]">
+                <p class="mt-4 text-2xs text-[#cfe7db]">
                     Seluruh isi halaman ini adalah data contoh, bukan data resmi.
                 </p>
             </div>
         </div>
         <hr class="my-8 border-white/20">
-        <p class="text-2xs text-[#e9f3ec]">© 2026 Fakultas Ilmu Komputer (contoh). Semua hak dilindungi.</p>
+        <p class="text-2xs text-[#eaf4ef]">© 2026 Fakultas Ilmu Komputer (contoh). Semua hak dilindungi.</p>
     </div>
 </footer>
 

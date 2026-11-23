@@ -48,20 +48,15 @@
 
             {{-- Tiga tombol niat, bukan satu tombol "Daftar": 2 dari 3
                  pengunjung BUKAN calon mahasiswa. --}}
-            {{-- Di HP: satu tombol utama (latar penuh, jelas bisa diklik) dan
-                 dua tautan bergaris bawah. Tiga kotak bergaris setara terbaca
-                 seperti kolom isian, bukan tombol. Di desktop ketiganya tampil
-                 sebagai tombol karena ruang cukup. --}}
-            <div class="mt-7 md:mt-6">
-                <a href="penerimaan.html" class="btn-on-dark w-full sm:w-auto">Calon Mahasiswa</a>
-                <ul class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-base font-semibold sm:hidden">
-                    <li><a href="akademik.html" class="text-white underline">Mahasiswa Aktif</a></li>
-                    <li><a href="profil.html" class="text-white underline">Dosen &amp; Staf</a></li>
-                </ul>
-                <div class="hidden gap-3 sm:flex sm:flex-wrap">
-                    <a href="akademik.html" class="btn-ghost-dark">Mahasiswa Aktif</a>
-                    <a href="profil.html" class="btn-ghost-dark">Dosen &amp; Staf</a>
-                </div>
+            {{-- Tiga pintu niat, satu gaya tombol. Sengaja TIDAK memakai
+                 tombol "ghost" (garis tipis) di atas latar teal: di layar HP
+                 garis itu nyaris tak terlihat sehingga tombol terbaca sebagai
+                 teks biasa. Semua memakai latar putih/krem supaya jelas bisa
+                 ditekan; yang pertama lebih padat karena paling sering dipakai. --}}
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a href="penerimaan.html" class="btn btn-on-dark">Calon Mahasiswa</a>
+                <a href="akademik.html" class="btn btn-on-dark">Mahasiswa Aktif</a>
+                <a href="profil.html" class="btn btn-on-dark">Dosen &amp; Staf</a>
             </div>
 
             <p class="mt-4 text-sm text-[#cfe0e4]">

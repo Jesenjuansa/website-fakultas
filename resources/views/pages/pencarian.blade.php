@@ -58,7 +58,7 @@
                 <li><a href="pencarian.html?q={{ urlencode($c) }}" class="chip">{{ $c }}</a></li>
             @endforeach
         </ul>
-        <p class="mt-4 text-sm text-body-soft">Belum ketemu? <a class="link" href="profil.html#kontak">Hubungi kami</a> — kami membalas pada jam layanan.</p>
+        <p class="mt-4 text-sm text-body-soft">Belum ketemu? <a class="link" href="profil.html#kontak">Hubungi kami</a>. Kami membalas pada jam layanan.</p>
     </section>
 </section>
 @endsection

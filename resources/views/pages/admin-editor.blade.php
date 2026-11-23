@@ -5,7 +5,7 @@
 
 @section('content')
 @include('partials.page-header', [
-    'judul' => 'Panel konten — tambah berita',
+    'judul' => 'Tambah berita baru',
     'ringkas' => 'Contoh tampilan untuk staf non-teknis. Batas konten di Tahap 5 diterapkan di sini: kolom menolak isi berlebih, gambar dipotong otomatis, dan alasan setiap batas ditulis jelas.',
 ])
 
@@ -46,7 +46,7 @@
                  mengunggah foto kamera 12 MB yang merusak tata letak. --}}
             <div class="mt-6">
                 <label for="gambar" class="label">Gambar utama</label>
-                <p class="hint" id="gambar-hint">JPG/PNG/WebP, maksimal 5 MB, disarankan lanskap. Sistem memotong otomatis ke 16:9 dari bagian tengah — jangan unggah gambar berisi tulisan kecil.</p>
+                <p class="hint" id="gambar-hint">JPG/PNG/WebP, maksimal 5 MB, disarankan lanskap. Sistem memotong otomatis ke 16:9 dari bagian tengah. Jangan unggah gambar berisi tulisan kecil.</p>
                 <input id="gambar" name="gambar" type="file" accept="image/jpeg,image/png,image/webp" class="input py-2" aria-describedby="gambar-hint">
                 <label class="mt-2 flex min-h-[44px] items-center gap-2 text-base">
                     <input type="checkbox" name="tanpa_gambar" class="h-5 w-5"> Terbitkan tanpa gambar
@@ -65,7 +65,10 @@
             <div class="mt-6">
                 <label for="isi" class="label">Isi berita</label>
                 <p class="hint">Gunakan tombol “Subjudul” untuk bagian baru. Tempel dari Word dengan tombol “Tempel tanpa format” agar warna dan ukuran huruf tidak terbawa.</p>
-                <div class="flex flex-wrap gap-1 rounded-t-sm border border-b-0 border-line-strong bg-surface p-1.5" role="toolbar" aria-label="Format teks">
+                {{-- Kosong secara bawaan: skrip editor menampilkannya. Tanpa JS
+                     tidak ada satu pun tombol format yang bisa diklik tapi diam. --}}
+                <div class="toolbar-format flex-wrap gap-1 rounded-t-sm border border-b-0 border-line-strong bg-surface p-1.5" role="toolbar" aria-label="Format teks"
+                     data-target="isi">
                     @foreach (['Tebal', 'Miring', 'Daftar', 'Daftar nomor', 'Tautan', 'Subjudul'] as $t)
                         <button type="button" class="btn btn-secondary btn-sm">{{ $t }}</button>
                     @endforeach
@@ -89,7 +92,13 @@
 
             <div class="mt-6 flex flex-wrap gap-3">
                 <button type="submit" class="btn btn-primary">Terbitkan</button>
-                <button type="button" class="btn btn-secondary">Simpan draf</button>
+                {{-- Tombol draf: situs statis tanpa server, jadi umpan baliknya ditulis
+                     langsung ke layar, bukan pura-pura menyimpan. --}}
+                <button type="button" class="btn btn-secondary"
+                        onclick="document.getElementById('status-draf').hidden = false; this.setAttribute('aria-disabled','true');">Simpan draf</button>
+                <p id="status-draf" class="w-full text-sm text-body" role="status" hidden>
+                    Draf belum bisa disimpan: panel ini contoh statis. Pada versi ber-server, tombol ini menyimpan tanpa menerbitkan.
+                </p>
             </div>
         </form>
 

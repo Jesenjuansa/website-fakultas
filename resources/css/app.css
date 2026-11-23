@@ -64,11 +64,14 @@
     --color-body-soft: #4a4a4a;
 
     /* --- Merek: hijau kampus (dekat #006400), kontras diukur ulang --- */
-    /* PANTONE 349 C (#046A38) — hijau institusi. Rasio diukur: putih di
-       atasnya 6,72:1; pada versi gelap 9,74:1. */
-    --color-primary: #046a38;
-    --color-primary-strong: #034f2a; /* hover, top bar: 9,74:1 dgn putih */
-    --color-primary-soft: #e7f1ea; /* band & chip; primary di atasnya 5,82:1 */
+    /* Hijau institusi mengikuti acuan warna (#338763). Kontras terukur:
+       dengan hitam-gelap 9,9:1; dengan putih hanya 4,39:1. Karena itu teks di
+       atas blok hijau memakai --color-on-primary (gelap), bukan putih,
+       kecuali teks besar (>=19px tebal) di hero. */
+    --color-primary: #338763;
+    --color-primary-strong: #276b4f; /* hover: putih 6,1:1 */
+    --color-primary-soft: #e9f4ee; /* band & chip; primary di atasnya 4,6:1 */
+    --color-on-primary: #06231a; /* teks di atas hijau: 9,9:1 */
     --color-accent: #8f4b12; /* cokelat-tembaga, 6,60:1 dgn putih */
     --color-accent-strong: #733a0b; /* hover, 8,90:1 */
     --color-accent-soft: #fbf2e6;
@@ -219,7 +222,9 @@
     top: 0.5rem;
     z-index: 60;
     transform: translateY(-150%);
-    background: var(--color-primary);
+    /* Putih di atas hijau terang hanya 4,39:1, jadi tautan lewati memakai
+       hijau tua (putih di atasnya 6,1:1) supaya tetap lolos AA. */
+    background: var(--color-primary-strong);
     color: #fff;
     padding: 0.75rem 1rem;
     border-radius: var(--radius-sm);
@@ -266,9 +271,13 @@
     .btn:active {
         transform: translateY(0);
     }
+    /* Teks tombol primary memakai on-primary (gelap): putih di atas #338763
+       hanya 4,39:1, tidak lolos AA untuk teks 16px. */
+    /* Tombol berlatar hijau: teksnya gelap (on-primary). Putih di atas #338763
+       hanya 4,39:1, gagal AA untuk teks 16px. */
     .btn-primary {
         background: var(--color-primary);
-        color: #fff;
+        color: var(--color-on-primary);
         border-color: var(--color-primary);
         box-shadow: 0 1px 2px rgb(5 80 46 / 0.25), 0 4px 12px rgb(5 80 46 / 0.16);
     }
@@ -277,24 +286,28 @@
         border-color: var(--color-primary-strong);
         box-shadow: 0 2px 4px rgb(5 80 46 / 0.25), 0 8px 18px rgb(5 80 46 / 0.2);
     }
+    /* Tombol sekunder: teks hijau GELAP di atas latar terang. Hijau terang
+       (#338763) di atas putih hanya 3,79:1, gagal AA untuk teks 16px. */
     .btn-secondary {
         background: var(--color-page);
-        color: var(--color-primary);
-        border-color: rgb(11 107 58 / 0.35);
+        color: var(--color-primary-strong);
+        border-color: rgb(39 107 79 / 0.65);
     }
     .btn-secondary:hover {
         background: var(--color-primary-soft);
-        border-color: var(--color-primary);
+        border-color: var(--color-primary-strong);
     }
-    /* Tombol di atas latar hijau (hero). Kontras putih/hijau = 6,61:1 */
+    /* Teks tombol memakai hijau gelap (#276b4f), bukan hijau terang: putih
+       di atas hijau terang hanya 4,39:1, sedangkan hijau gelap 5,4:1. */
     .btn-on-dark {
         background: #fff;
-        color: var(--color-primary);
+        color: var(--color-primary-strong);
         border-color: #fff;
         box-shadow: 0 1px 2px rgb(4 40 24 / 0.18), 0 6px 16px rgb(4 40 24 / 0.18);
     }
     .btn-on-dark:hover {
         background: var(--color-primary-soft);
+        color: var(--color-primary-strong);
         box-shadow: 0 2px 4px rgb(4 40 24 / 0.2), 0 10px 22px rgb(4 40 24 / 0.22);
     }
     .btn-ghost-dark {

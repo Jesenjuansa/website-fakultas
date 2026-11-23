@@ -14,7 +14,11 @@
     <title>@yield('title', 'Beranda') · Fakultas Ilmu Komputer (Contoh)</title>
     {{-- Satu berkas CSS hasil kompilasi, tanpa CDN: tidak bergantung
          pada jaringan pihak ketiga (pengunjung 3G). --}}
-    <link rel="stylesheet" href="build/app.css">
+    <link rel="stylesheet" href="build/app.css?v=349">
+    {{-- Satu-satunya skrip situs: alat format di panel editor. defer berarti
+         tidak menghambat tampilan, dan seluruh halaman tetap berfungsi bila
+         skrip ini gagal dimuat (menu, isi, dan tautan tidak bergantung padanya). --}}
+    <script src="build/editor.js?v=349" defer></script>
 </head>
 <body class="min-h-screen flex flex-col">
 

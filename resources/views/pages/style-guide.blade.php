@@ -12,7 +12,7 @@
 <section class="container-page space-y-12 pb-12">
     {{-- Tipografi --}}
     <div>
-        <h2 class="text-2xl font-bold">Tipografi</h2>
+        <h2 class="text-2xl font-semibold">Tipografi</h2>
         <p class="mt-1 text-body-soft">Ukuran HP → desktop. Teks badan tidak pernah di bawah 16px.</p>
         <div class="mt-4 space-y-3 border-t border-line pt-4">
             <p class="text-hero font-bold leading-tight">Hero 30px → 44px</p>
@@ -29,12 +29,12 @@
 
     {{-- Warna + kontras --}}
     <div>
-        <h2 class="text-2xl font-bold">Warna &amp; kontras</h2>
+        <h2 class="text-2xl font-semibold">Warna &amp; kontras</h2>
         <p class="mt-1 text-body-soft">Angka di kanan adalah rasio kontras terhadap putih. Teks normal wajib ≥ 4,5:1; batas elemen UI ≥ 3:1.</p>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             @foreach ([
-                ['Primary', '#0f4c5c', '9,51:1', 'bg-primary text-white'],
-                ['Primary hover', '#0b3c49', '11,95:1', 'bg-primary-strong text-white'],
+                ['Primary — PANTONE 349 C', '#046a38', '6,72:1', 'bg-primary text-white'],
+                ['Primary hover', '#034f2a', '9,74:1', 'bg-primary-strong text-white'],
                 ['Aksen', '#8f4a25', '6,62:1', 'bg-accent text-white'],
                 ['Teks utama', '#1a1a1a', '17,40:1', 'bg-body text-white'],
                 ['Teks sekunder', '#4a4a4a', '8,86:1', 'bg-body-soft text-white'],
@@ -63,7 +63,7 @@
 
     {{-- Tombol --}}
     <div>
-        <h2 class="text-2xl font-bold">Tombol</h2>
+        <h2 class="text-2xl font-semibold">Tombol</h2>
         <p class="mt-1 text-body-soft">Tinggi minimum 44px. Satu tombol primary per layar.</p>
         <div class="mt-4 flex flex-wrap items-center gap-3">
             <button class="btn btn-primary">Primary</button>
@@ -80,7 +80,7 @@
 
     {{-- Form --}}
     <div>
-        <h2 class="text-2xl font-bold">Form</h2>
+        <h2 class="text-2xl font-semibold">Form</h2>
         <div class="card mt-4 max-w-xl p-5">
             <div>
                 <label for="sg-nama" class="label">Nama lengkap</label>
@@ -101,7 +101,7 @@
 
     {{-- Tabel: perilaku responsif --}}
     <div>
-        <h2 class="text-2xl font-bold">Tabel responsif</h2>
+        <h2 class="text-2xl font-semibold">Tabel responsif</h2>
         <p class="mt-1 text-body-soft">Kecilkan jendela ke ≤768px: tabel berubah menjadi daftar kartu berlabel. Tidak ada geser ke samping.</p>
         <div class="card mt-4 overflow-hidden">
             <table class="data-table">
@@ -118,7 +118,7 @@
 
     {{-- Jarak --}}
     <div>
-        <h2 class="text-2xl font-bold">Skala jarak</h2>
+        <h2 class="text-2xl font-semibold">Skala jarak</h2>
         <ul class="mt-3 flex flex-wrap items-end gap-6">
             @foreach ([4 => 'space-1', 8 => 'space-2', 12 => 'space-3', 16 => 'space-4', 24 => 'space-5', 32 => 'space-6', 48 => 'space-8', 64 => 'space-10'] as $px => $nama)
                 <li class="text-center">

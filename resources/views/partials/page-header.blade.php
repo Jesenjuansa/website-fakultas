@@ -11,7 +11,7 @@
         @if ($eyebrow)
             <p class="eyebrow mb-2">{{ $eyebrow }}</p>
         @endif
-        <h1 class="text-3xl font-bold text-body md:text-3xl-d">{{ $judul }}</h1>
+        <h1 class="text-3xl font-semibold text-body md:text-3xl-d">{{ $judul }}</h1>
         @if ($ringkas)
             <p class="mt-3 text-measure text-lg text-body-soft">{{ $ringkas }}</p>
         @endif

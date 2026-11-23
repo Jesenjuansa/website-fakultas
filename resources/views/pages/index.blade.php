@@ -23,7 +23,7 @@
      tidak terbaca di HP dan tidak bisa dihentikan pembaca layar. --}}
 {{-- Gradasi halus dari hijau PANTONE 349 ke versi lebih gelap: blok rata
      terasa berat di layar lebar. Gambar latar tetap ada di bawahnya. --}}
-<section class="relative isolate overflow-hidden text-white bg-[linear-gradient(155deg,#357f60_0%,#2c7657_45%,#1b513c_100%)]">
+<section class="relative isolate overflow-hidden text-white bg-[linear-gradient(155deg,#357f60_0%,#2c7657_38%,rgb(27_81_60/0.72)_100%)]">
     {{-- Gambar latar dipasang sebagai <img> (bukan CSS) supaya bisa diberi
          alt & width/height. Overlay gelap 90%/78% memastikan kontras teks
          putih tetap >=4.5:1 apa pun terangnya foto di bawahnya. --}}
@@ -56,8 +56,8 @@
                  ditekan; yang pertama lebih padat karena paling sering dipakai. --}}
             <div class="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
                 <a href="penerimaan.html" class="btn btn-on-dark w-full sm:w-auto">Calon Mahasiswa</a>
-                <a href="akademik.html" class="btn btn-on-dark w-full sm:w-auto">Mahasiswa Aktif</a>
-                <a href="profil.html" class="btn btn-on-dark w-full sm:w-auto">Dosen &amp; Staf</a>
+                <a href="akademik.html" class="btn btn-ghost-dark w-full sm:w-auto">Mahasiswa Aktif</a>
+                <a href="profil.html" class="btn btn-ghost-dark w-full sm:w-auto">Dosen &amp; Staf</a>
             </div>
 
             <p class="mt-4 text-sm text-white/90">

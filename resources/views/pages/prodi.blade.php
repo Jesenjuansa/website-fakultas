@@ -12,9 +12,9 @@
         'bidang' => 'Rekayasa perangkat lunak, data, jaringan',
         'lulusan' => 'Engineer, analis sistem, data scientist',
         'kurikulum' => [
-            ['INF101', 'Dasar Pemrograman', '4', '—'],
-            ['INF102', 'Matematika Diskret', '3', '—'],
-            ['INF103', 'Pengantar Sistem Komputer', '3', '—'],
+            ['INF101', 'Dasar Pemrograman', '4', 'Belum ditentukan'],
+            ['INF102', 'Matematika Diskret', '3', 'Belum ditentukan'],
+            ['INF103', 'Pengantar Sistem Komputer', '3', 'Belum ditentukan'],
             ['INF104', 'Struktur Data', '3', 'INF101'],
         ],
     ];
@@ -83,8 +83,8 @@
 
             {{-- 3. Kurikulum: tabel 4 kolom, otomatis jadi kartu di HP. --}}
             <section id="kurikulum" class="mt-10 scroll-mt-24">
-                <h2 class="text-2xl font-semibold">Kurikulum semester 1 — {{ $prodi['nama'] }}</h2>
-                <p class="mt-1 text-measure text-body-soft">Contoh satu semester. Tabel empat kolom ditampilkan sebagai daftar saat dibuka dari HP — tidak ada tabel yang harus digeser ke samping.</p>
+                <h2 class="text-2xl font-semibold">Kurikulum semester 1 {{ $prodi['nama'] }}</h2>
+                <p class="mt-1 text-measure text-body-soft">Contoh satu semester. Tabel empat kolom ditampilkan sebagai daftar saat dibuka dari HP, tidak ada tabel yang harus digeser ke samping.</p>
                 <div class="card mt-4 overflow-hidden">
                     <table class="data-table">
                         <caption class="sr-only">Kurikulum semester 1 program studi Informatika</caption>

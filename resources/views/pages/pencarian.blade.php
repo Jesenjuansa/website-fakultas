@@ -33,7 +33,7 @@
         @php $item = array_values(array_filter($hasil, fn ($h) => $h[3] === $jenis)); @endphp
         @if (count($item))
             <section class="mt-8">
-                <h2 class="flex items-baseline gap-2 text-xl font-bold">
+                <h2 class="flex items-baseline gap-2 text-xl font-semibold">
                     {{ $jenis }}
                     <span class="text-sm font-normal text-body-soft">({{ count($item) }})</span>
                 </h2>
@@ -52,7 +52,7 @@
     {{-- Hasil kosong BUKAN jalan buntu: beri tautan yang paling sering dicari
            dan cara menghubungi manusia. --}}
     <section class="card mt-10 p-5">
-        <h2 class="text-lg font-bold">Yang paling sering dicari</h2>
+        <h2 class="text-lg font-semibold">Yang paling sering dicari</h2>
         <ul class="mt-3 flex flex-wrap gap-2">
             @foreach (['Biaya kuliah', 'Syarat pendaftaran', 'Jadwal kuliah', 'Direktori dosen', 'Akreditasi'] as $c)
                 <li><a href="pencarian.html?q={{ urlencode($c) }}" class="chip">{{ $c }}</a></li>

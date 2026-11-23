@@ -1,0 +1,14 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "description": "Front-end website fakultas (statis, data placeholder) — Laravel-style Blade + Tailwind CSS v4",
+    "scripts": {
+        "build": "vite build",
+        "watch": "vite build --watch"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "vite": "^8.0.0"
+    }
+}

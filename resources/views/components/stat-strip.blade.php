@@ -20,7 +20,9 @@
                     @if (! empty($f['note']))
                         {{-- Nomor SK tidak boleh pecah di tengah: kalau pecah,
                              "2025" bisa jatuh sendirian ke baris berikutnya. --}}
-                        <dd class="text-2xs text-body-soft [overflow-wrap:break-word] hyphens-none">{{ $f['note'] }}</dd>
+                        {{-- Nomor SK tidak boleh pecah di tengah token: token utuh
+                             turun ke baris baru, bukan dipotong. --}}
+                        <dd class="mt-0.5 text-2xs text-body-soft [word-break:keep-all] [overflow-wrap:normal] hyphens-none">{{ $f['note'] }}</dd>
                     @endif
                 </div>
             @endforeach

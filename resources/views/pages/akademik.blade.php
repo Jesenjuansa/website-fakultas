@@ -30,7 +30,7 @@
            Ditaruh paling atas, tidak di bawah sambutan. --}}
     <section aria-labelledby="pengumuman-akademik">
         <div class="flex flex-wrap items-end justify-between gap-3">
-            <h2 id="pengumuman-akademik" class="text-2xl font-bold">Pengumuman terbaru</h2>
+            <h2 id="pengumuman-akademik" class="text-2xl font-semibold">Pengumuman terbaru</h2>
             <a href="pengumuman.html" class="link text-sm">Semua pengumuman</a>
         </div>
         <ul class="mt-3 divide-y divide-line border-y border-line">
@@ -57,7 +57,7 @@
 
     {{-- 3. JADWAL KULIAH --}}
     <section id="jadwal" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Jadwal kuliah (contoh)</h2>
+        <h2 class="text-2xl font-semibold">Jadwal kuliah (contoh)</h2>
         <p class="mt-1 text-measure text-body-soft">Semester Ganjil 2026/2027, kelas A dan B Informatika. Pada layar sempit, tiap baris ditampilkan sebagai kartu: label di kiri, isi di kanan.</p>
         <div class="card mt-4 overflow-hidden">
             <table class="data-table">
@@ -90,7 +90,7 @@
 
     {{-- 4. KALENDER AKADEMIK: hanya tanggal terdekat. Arsip lengkap di unduhan. --}}
     <section id="kalender" class="mt-10 scroll-mt-24">
-        <h2 class="text-2xl font-bold">Kalender akademik terdekat</h2>
+        <h2 class="text-2xl font-semibold">Kalender akademik terdekat</h2>
         <ol class="mt-3 space-y-2">
             @foreach ([['18 Nov 2026', 'Ujian Tengah Semester dimulai'], ['12 Des 2026', 'Batas akhir pengisian KRS'], ['24 Des 2026', 'Pengumuman hasil studi'], ['6 Jan 2027', 'Kuliah semester genap dimulai']] as [$tgl, $agenda])
                 <li class="flex flex-wrap items-baseline gap-x-3 rounded-md border border-line px-4 py-3">

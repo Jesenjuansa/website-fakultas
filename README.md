@@ -1,7 +1,7 @@
 # Website Fakultas — Front-End (Pratinjau)
 
 Pratinjau front-end sebuah website fakultas: struktur navigasi, prioritas informasi per halaman,
-design system, dan komponen Blade yang bisa dipakai ulang.
+design system (PANTONE 349 C), dan komponen Blade yang bisa dipakai ulang.
 
 **Demo:** https://jesenjuansa.github.io/website-fakultas/
 

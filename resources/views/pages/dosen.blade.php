@@ -21,6 +21,9 @@
 ])
 
 <section class="container-page pb-10">
+    {{-- Jumlah hasil diberi judul h2 sungguhan: sebelumnya halaman melompat
+           dari h1 ke h3 (pembaca layar kehilangan struktur daftar). --}}
+    <h2 class="sr-only">Daftar dosen</h2>
     {{-- Kotak pencarian DOSEN saja, bukan pencarian situs: pencarian global
            yang mencampur berita akan mengubur nama dosen. Form GET biasa. --}}
     <form action="dosen.html" method="get" class="card p-4">

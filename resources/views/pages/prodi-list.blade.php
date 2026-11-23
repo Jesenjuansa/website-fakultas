@@ -19,7 +19,7 @@
         @foreach ($daftarProdi as $p)
             <article class="card flex flex-col p-5">
                 <p class="eyebrow">{{ $p['jenjang'] }}</p>
-                <h2 class="mt-1 text-xl font-bold text-body">
+                <h2 class="mt-1 text-xl font-semibold text-body">
                     <a href="{{ $p['url'] }}" class="hover:text-primary">{{ $p['nama'] }}</a>
                 </h2>
                 <p class="text-sm text-body-soft">{{ $p['gelar'] }}</p>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="card mt-8 border-l-4 border-l-accent p-5">
-        <h2 class="text-lg font-bold">Bingung memilih?</h2>
+        <h2 class="text-lg font-semibold">Bingung memilih?</h2>
         <p class="mt-1 text-measure text-body-soft">Hubungi tim penerimaan mahasiswa pada hari kerja, 08.00–15.30 WIB. Kami tidak menentukan pilihan untuk Anda, tetapi dapat menjelaskan perbedaan kurikulum.</p>
         <a href="profil.html#kontak" class="btn btn-primary mt-3">Hubungi penerimaan</a>
     </div>

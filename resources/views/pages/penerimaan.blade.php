@@ -72,7 +72,7 @@
                 ['Cek hasil pengumuman', 'Hasil diumumkan di portal yang sama; email hanya berisi pengingat, bukan keputusan.'],
             ] as $i => [$judul, $teks])
                 <li class="flex gap-4 rounded-md border border-line p-4">
-                    <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary text-base font-bold text-white" aria-hidden="true">{{ $i + 1 }}</span>
+                    <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary text-base font-bold text-on-primary" aria-hidden="true">{{ $i + 1 }}</span>
                     <div>
                         <h3 class="text-base font-semibold">{{ $judul }}</h3>
                         <p class="mt-1 text-base text-body-soft">{{ $teks }}</p>

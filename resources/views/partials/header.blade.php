@@ -40,7 +40,7 @@
     ];
 @endphp
 
-<div class="bg-primary text-white">
+<div class="bg-primary-strong text-white">
     <div class="container-page">
         <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-1.5 text-2xs">
             {{-- Identitas universitas: pengunjung harus tahu fakultas ini
@@ -64,13 +64,13 @@
 
             {{-- Logo: teks alternatif wajib memuat nama fakultas, bukan "logo". --}}
             <a href="index.html" class="flex items-center gap-3 no-underline">
-                <span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-sm bg-primary text-white font-bold text-lg">FK</span>
+                <span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-sm bg-primary text-on-primary font-bold text-lg">FK</span>
                 {{-- Nama universitas sudah ada di top bar; diulang di sini
                      membuat kepala halaman terasa penuh di layar 360px. --}}
                 <span class="leading-tight">
                     <span class="block text-base font-semibold text-body">Fakultas Ilmu Komputer</span>
                 </span>
-                <span class="sr-only">— beranda</span>
+                <span class="sr-only">Halaman beranda</span>
             </a>
 
             {{-- Menu HP: <details> = buka-tutup bawaan browser, tanpa JS.

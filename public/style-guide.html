@@ -40,9 +40,9 @@
             
             <a href="index.html" class="flex items-center gap-3 no-underline">
                 <span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-sm bg-primary text-white font-bold text-lg">FK</span>
+                
                 <span class="leading-tight">
-                    <span class="block text-base font-bold text-body">Fakultas Ilmu Komputer</span>
-                    <span class="block text-2xs text-body-soft">Universitas Contoh Raya (Contoh)</span>
+                    <span class="block text-base font-semibold text-body">Fakultas Ilmu Komputer</span>
                 </span>
                 <span class="sr-only">— beranda</span>
             </a>
@@ -220,7 +220,7 @@
     
 <div class="bg-page">
     <div class="container-page pb-6 pt-8 md:pb-8 md:pt-10">
-                <h1 class="text-3xl font-bold text-body md:text-3xl-d">Panduan desain (living style guide)</h1>
+                <h1 class="text-3xl font-semibold text-body md:text-3xl-d">Panduan desain (living style guide)</h1>
                     <p class="mt-3 text-measure text-lg text-body-soft">Halaman ini menampilkan token dan komponen yang dipakai situs. Kalau tampilannya berbeda dari halaman lain, berarti ada komponen yang tidak memakai token.</p>
             </div>
 </div>
@@ -228,7 +228,7 @@
 <section class="container-page space-y-12 pb-12">
     
     <div>
-        <h2 class="text-2xl font-bold">Tipografi</h2>
+        <h2 class="text-2xl font-semibold">Tipografi</h2>
         <p class="mt-1 text-body-soft">Ukuran HP → desktop. Teks badan tidak pernah di bawah 16px.</p>
         <div class="mt-4 space-y-3 border-t border-line pt-4">
             <p class="text-hero font-bold leading-tight">Hero 30px → 44px</p>
@@ -245,20 +245,20 @@
 
     
     <div>
-        <h2 class="text-2xl font-bold">Warna &amp; kontras</h2>
+        <h2 class="text-2xl font-semibold">Warna &amp; kontras</h2>
         <p class="mt-1 text-body-soft">Angka di kanan adalah rasio kontras terhadap putih. Teks normal wajib ≥ 4,5:1; batas elemen UI ≥ 3:1.</p>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                             <li class="overflow-hidden rounded-md border border-line">
                     <div class="bg-primary text-white flex h-16 items-end justify-between p-2 text-sm font-semibold">
-                        <span>Primary</span><span class="tabular">#0f4c5c</span>
+                        <span>Primary — PANTONE 349 C</span><span class="tabular">#046a38</span>
                     </div>
-                    <p class="bg-page px-2 py-1.5 text-2xs text-body-soft">Kontras vs putih: <strong class="text-body">9,51:1</strong></p>
+                    <p class="bg-page px-2 py-1.5 text-2xs text-body-soft">Kontras vs putih: <strong class="text-body">6,72:1</strong></p>
                 </li>
                             <li class="overflow-hidden rounded-md border border-line">
                     <div class="bg-primary-strong text-white flex h-16 items-end justify-between p-2 text-sm font-semibold">
-                        <span>Primary hover</span><span class="tabular">#0b3c49</span>
+                        <span>Primary hover</span><span class="tabular">#034f2a</span>
                     </div>
-                    <p class="bg-page px-2 py-1.5 text-2xs text-body-soft">Kontras vs putih: <strong class="text-body">11,95:1</strong></p>
+                    <p class="bg-page px-2 py-1.5 text-2xs text-body-soft">Kontras vs putih: <strong class="text-body">9,74:1</strong></p>
                 </li>
                             <li class="overflow-hidden rounded-md border border-line">
                     <div class="bg-accent text-white flex h-16 items-end justify-between p-2 text-sm font-semibold">
@@ -321,7 +321,7 @@
 
     
     <div>
-        <h2 class="text-2xl font-bold">Tombol</h2>
+        <h2 class="text-2xl font-semibold">Tombol</h2>
         <p class="mt-1 text-body-soft">Tinggi minimum 44px. Satu tombol primary per layar.</p>
         <div class="mt-4 flex flex-wrap items-center gap-3">
             <button class="btn btn-primary">Primary</button>
@@ -338,7 +338,7 @@
 
     
     <div>
-        <h2 class="text-2xl font-bold">Form</h2>
+        <h2 class="text-2xl font-semibold">Form</h2>
         <div class="card mt-4 max-w-xl p-5">
             <div>
                 <label for="sg-nama" class="label">Nama lengkap</label>
@@ -359,7 +359,7 @@
 
     
     <div>
-        <h2 class="text-2xl font-bold">Tabel responsif</h2>
+        <h2 class="text-2xl font-semibold">Tabel responsif</h2>
         <p class="mt-1 text-body-soft">Kecilkan jendela ke ≤768px: tabel berubah menjadi daftar kartu berlabel. Tidak ada geser ke samping.</p>
         <div class="card mt-4 overflow-hidden">
             <table class="data-table">
@@ -376,7 +376,7 @@
 
     
     <div>
-        <h2 class="text-2xl font-bold">Skala jarak</h2>
+        <h2 class="text-2xl font-semibold">Skala jarak</h2>
         <ul class="mt-3 flex flex-wrap items-end gap-6">
                             <li class="text-center">
                     <span class="block bg-primary" style="width: 4px; height: 24px"></span>
@@ -421,17 +421,17 @@
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
                 <p class="text-base font-bold">Fakultas Ilmu Komputer</p>
-                <p class="mt-1 text-sm text-[#cfe0e4]">Universitas Contoh Raya (Contoh)</p>
-                <address class="mt-4 text-sm not-italic text-[#e8f1f3]">
+                <p class="mt-1 text-sm text-[#cfe5d8]">Universitas Contoh Raya (Contoh)</p>
+                <address class="mt-4 text-sm not-italic text-[#e9f3ec]">
                     Jl. Contoh Raya No. 1, Kota Contoh, Provinsi Contoh 00000
                 </address>
-                <p class="mt-2 text-sm text-[#e8f1f3]">
+                <p class="mt-2 text-sm text-[#e9f3ec]">
                     <a class="underline" href="tel:+620000000000">(0000) 000-000</a><br>
                     <a class="underline" href="mailto:info@contoh.ac.id">info@contoh.ac.id</a>
                 </p>
             </div>
             <div>
-                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe0e4]">Tautan cepat</p>
+                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe5d8]">Tautan cepat</p>
                 <ul class="mt-3 space-y-2 text-sm">
                     <li><a class="underline" href="program-studi.html">Program Studi</a></li>
                     <li><a class="underline" href="penerimaan.html">Penerimaan Mahasiswa</a></li>
@@ -440,7 +440,7 @@
                 </ul>
             </div>
             <div>
-                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe0e4]">Lainnya</p>
+                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe5d8]">Lainnya</p>
                 <ul class="mt-3 space-y-2 text-sm">
                     <li><a class="underline" href="pengumuman.html">Pengumuman</a></li>
                     <li><a class="underline" href="unduhan.html">Unduhan</a></li>
@@ -449,19 +449,19 @@
                 </ul>
             </div>
             <div>
-                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe0e4]">Tentang situs</p>
+                <p class="text-sm font-bold uppercase tracking-wider text-[#cfe5d8]">Tentang situs</p>
                 <ul class="mt-3 space-y-2 text-sm">
                     <li><a class="underline" href="#">Kebijakan Privasi</a></li>
                     <li><a class="underline" href="#">Pernyataan Aksesibilitas</a></li>
                     <li><a class="underline" href="#">Peta Situs</a></li>
                 </ul>
-                <p class="mt-4 text-2xs text-[#cfe0e4]">
+                <p class="mt-4 text-2xs text-[#cfe5d8]">
                     Seluruh isi halaman ini adalah data contoh, bukan data resmi.
                 </p>
             </div>
         </div>
         <hr class="my-8 border-white/20">
-        <p class="text-2xs text-[#e8f1f3]">© 2026 Fakultas Ilmu Komputer (contoh). Semua hak dilindungi.</p>
+        <p class="text-2xs text-[#e9f3ec]">© 2026 Fakultas Ilmu Komputer (contoh). Semua hak dilindungi.</p>
     </div>
 </footer>
 

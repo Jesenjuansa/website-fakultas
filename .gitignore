@@ -1,8 +1,0 @@
-node_modules/
-staging/
-public/build/
-*.bak
-_t*.php
-_dump.php
-_debug.php
-render_dbg.php

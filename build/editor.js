@@ -1,0 +1,6 @@
+(function(){var e=document.querySelector(`[role="toolbar"][data-target]`);if(!e)return;var t=document.getElementById(e.dataset.target);if(!t){e.remove();return}var n={Tebal:[`**`,`**`,`teks tebal`],Miring:[`*`,`*`,`teks miring`],Subjudul:[`## `,``,`Subjudul bagian`],Tautan:[`[`,`](alamat-tujuan)`,`teks tautan`]};function r(e,n,r){var i=t.selectionStart,a=t.selectionEnd,o=t.value.slice(i,a)||r;t.setRangeText(e+o+n,i,a,`end`),t.focus(),t.setSelectionRange(i+e.length,i+e.length+o.length),t.dispatchEvent(new Event(`input`,{bubbles:!0}))}e.addEventListener(`click`,function(e){var i=e.target.closest(`button`);if(i){var a=i.textContent.trim();if(n[a])r.apply(null,n[a]);else if(a===`Daftar`||a===`Daftar nomor`){var o=a===`Daftar`?`- `:`1. `,s=t.selectionStart,c=t.value.slice(0,s);r(c.endsWith(`
+`)||c.length===0?o:`
+`+o,``,`butir daftar`)}else a===`Tempel tanpa format`?(t.value=t.value.replace(/\r\n?/g,`
+`).replace(/[ \t]{2,}/g,` `).replace(/\n{3,}/g,`
+
+`).trim(),t.dispatchEvent(new Event(`input`,{bubbles:!0}))):i.hidden=!0}})})();

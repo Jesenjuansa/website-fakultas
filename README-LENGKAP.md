@@ -42,16 +42,20 @@ build.php                                  Merender semua halaman ke public/
 
 | Peran | Nilai | Kontras vs putih |
 |---|---|---|
-| Primary | `#0F4C5C` | 9,51:1 |
-| Primary hover | `#0B3C49` | 11,95:1 |
-| Aksen | `#A0522D` | 5,62:1 |
-| Teks | `#1A1A1A` | 17,40:1 |
-| Teks sekunder | `#4A4A4A` | 8,86:1 |
-| Sukses | `#1B7F3B` | 5,07:1 |
-| Peringatan | `#9A5B00` | 5,43:1 |
-| Galat | `#B3261E` | 6,54:1 |
-| Fokus keyboard | `#0B63A8` | 6,24:1 |
-| Garis/batas UI | `#8C9598` | 3,06:1 (ambang elemen UI 3:1) |
+| Primary — **PANTONE 349 C** `#046A38` | 6,72:1 |
+| Primary hover / top bar `#034F2A` | 9,74:1 |
+| Hijau muda (band/chip) `#E7F1EA` | primary di atasnya 5,82:1 |
+| Aksen tembaga `#8F4B12` | 6,60:1 |
+| Teks `#1A1A1A` | 17,40:1 |
+| Teks sekunder `#4A4A4A` | 8,86:1 |
+| Sukses `#1B7F3B` | 5,07:1 |
+| Peringatan `#9A5B00` | 5,43:1 |
+| Galat `#B3261E` | 6,54:1 |
+| Fokus keyboard `#0B63A8` | 6,24:1 |
+| Garis/batas UI `#7F8C83` | 3,51:1 |
+
+Bentuk: tombol & input berbentuk pil (`radius 999px`), kartu 14px, bayangan dua lapis tipis.
+Judul memakai bobot 600 (bukan 700), tinggi baris badan 1,7.
 
 Tipografi: badan 16 px (lantai aman), H1 28→36 px, hero 30→44 px. Jarak kelipatan 4 px
 (4/8/12/16/24/32/48/64). Sentuh minimal 44×44 px.

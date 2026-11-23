@@ -44,7 +44,7 @@
     {{-- Tirai hijau: 62% di HP, 48% di desktop. Foto gedung tetap terlihat
          (hero tidak terasa kosong), sementara teks putih tetap di area gelap
          dan lolos kontras. --}}
-    <div aria-hidden="true" class="absolute inset-0 -z-[5] bg-[linear-gradient(155deg,rgb(15_42_32/0.72)_0%,rgb(15_42_32/0.62)_100%)] md:bg-[linear-gradient(155deg,rgb(15_42_32/0.58)_0%,rgb(15_42_32/0.46)_100%)]"></div>
+    <div aria-hidden="true" class="absolute inset-0 -z-[5] bg-[linear-gradient(155deg,rgb(15_42_32/0.62)_0%,rgb(15_42_32/0.5)_100%)] md:bg-[linear-gradient(155deg,rgb(15_42_32/0.5)_0%,rgb(15_42_32/0.38)_100%)]"></div>
 
     <div class="container-page py-11 md:py-16 lg:py-20">
         <div class="max-w-3xl">

@@ -54,22 +54,24 @@
            (#8C9598 = 3.06:1) tidak cukup di atas latar abu, jadi tidak
            dipakai untuk input. --- */
     --color-page: #ffffff;
-    --color-surface: #f4f6f7; /* blok selang-seling, latar tabel zebra */
-    --color-line: #e3e8ea; /* garis rambut antar kartu */
-    --color-line-strong: #8c9598; /* batas input/checkbox, 3,06:1 */
+    --color-surface: #f7f8f7; /* blok selang-seling (hijau-abu sangat muda) */
+    --color-line: #e6eae6; /* garis rambut antar kartu */
+    --color-line-strong: #7f8c83; /* batas input, 3,51:1 (ambang elemen UI 3:1) */
 
     /* --- Teks. Teks sekunder #4A4A4A = 8.86:1; larangan "abu tipis"
            (#999 = 2.85:1) kita patuhi: tidak ada teks di bawah 4.5:1. --- */
     --color-body: #1a1a1a;
     --color-body-soft: #4a4a4a;
 
-    /* --- Merek --- */
-    --color-primary: #0f4c5c; /* 9,51:1 dgn putih */
-    --color-primary-strong: #0b3c49; /* hover, 11,95:1 */
-    --color-primary-soft: #e8f1f3; /* band & chip, 8.29:1 dgn primary */
-    --color-accent: #a0522d; /* terakota, 5,62:1 dgn putih */
-    --color-accent-strong: #8a4427; /* hover, 7,15:1 */
-    --color-accent-soft: #faede4;
+    /* --- Merek: hijau kampus (dekat #006400), kontras diukur ulang --- */
+    /* PANTONE 349 C (#046A38) — hijau institusi. Rasio diukur: putih di
+       atasnya 6,72:1; pada versi gelap 9,74:1. */
+    --color-primary: #046a38;
+    --color-primary-strong: #034f2a; /* hover, top bar: 9,74:1 dgn putih */
+    --color-primary-soft: #e7f1ea; /* band & chip; primary di atasnya 5,82:1 */
+    --color-accent: #8f4b12; /* cokelat-tembaga, 6,60:1 dgn putih */
+    --color-accent-strong: #733a0b; /* hover, 8,90:1 */
+    --color-accent-soft: #fbf2e6;
 
     /* --- Status (selalu dipakai bersama ikon + kata, bukan warna saja) --- */
     --color-success: #1b7f3b; /* 5,07:1; versi gelap #166e35 = 6,33:1 */
@@ -81,10 +83,13 @@
     --color-focus: #0b63a8; /* 6,24:1, garis fokus keyboard */
 
     /* --- Sudut & bayangan: dua radius saja. Lebih dari itu terlihat mainan. --- */
-    --radius-sm: 4px; /* input, tombol, chip */
-    --radius-md: 8px; /* kartu, panel */
-    --shadow-card: 0 1px 2px rgb(16 32 36 / 0.08);
-    --shadow-panel: 0 8px 24px rgb(16 32 36 / 0.12);
+    /* Radius lebih besar = sudut tidak "tajam". Dua nilai saja agar konsisten. */
+    --radius-sm: 8px;  /* input, tombol */
+    --radius-md: 14px; /* kartu, panel */
+    --radius-pill: 999px; /* chip, label */
+    /* Bayangan dua lapis tipis: tepi kartu lembut, tanpa garis gelap. */
+    --shadow-card: 0 1px 2px rgb(16 32 36 / 0.04), 0 2px 10px rgb(16 32 36 / 0.05);
+    --shadow-panel: 0 2px 6px rgb(16 32 36 / 0.06), 0 14px 34px rgb(16 32 36 / 0.1);
 }
 
 /* =====================================================================
@@ -110,6 +115,11 @@
     }
     body {
         @apply bg-page text-body font-sans text-base antialiased;
+        /* Tinggi baris & huruf sedikit lebih longgar + huruf teks lebih tebal
+           (opsz) supaya tulisan tidak terasa "tajam/kaku" di layar HP. */
+        line-height: 1.7;
+        letter-spacing: 0.005em;
+        font-optical-sizing: auto;
         /* Teks hasil salin-tempel dari Word kadang berisi URL/keyword panjang;
            ini mencegah seluruh halaman bisa digeser ke samping di HP. */
         overflow-wrap: break-word;
@@ -229,59 +239,75 @@
    Hanya dua gaya diperkuat (primary & secondary) + gaya tautan. Tiga
    tombol sama kuat di satu layar = tidak ada prioritas. */
 @layer components {
+    /* Tombol berbentuk pil dengan transisi lembut. Kotak bersudut 4px terasa
+       "tajam" di situs kampus; pil terasa lebih ramah dan tetap jelas batasnya.
+       Tinggi tetap 44px (batas nyaman ibu jari, WCAG 2.5.5). */
     .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        border-radius: var(--radius-sm);
-        padding: 0.75rem 1.25rem;
+        border-radius: var(--radius-pill);
+        padding: 0.75rem 1.4rem;
         font-size: var(--text-base);
         line-height: 1;
         font-weight: 600;
-        transition: background-color 150ms, border-color 150ms, color 150ms;
-        /* 44px = batas nyaman ibu jari (WCAG 2.5.5). Bukan hiasan: tombol di
-           bawah 40px di situs kampus hampir selalu salah ketuk. */
+        letter-spacing: 0.01em;
+        border: 1px solid transparent;
         min-height: 44px;
+        transition: background-color 200ms ease, border-color 200ms ease,
+            color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+        will-change: transform;
+    }
+    /* Naik 1px saat disorot: umpan balik halus, bukan lompatan warna. */
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+    .btn:active {
+        transform: translateY(0);
     }
     .btn-primary {
         background: var(--color-primary);
         color: #fff;
-        border: 1px solid var(--color-primary);
+        border-color: var(--color-primary);
+        box-shadow: 0 1px 2px rgb(5 80 46 / 0.25), 0 4px 12px rgb(5 80 46 / 0.16);
     }
     .btn-primary:hover {
         background: var(--color-primary-strong);
         border-color: var(--color-primary-strong);
+        box-shadow: 0 2px 4px rgb(5 80 46 / 0.25), 0 8px 18px rgb(5 80 46 / 0.2);
     }
     .btn-secondary {
         background: var(--color-page);
         color: var(--color-primary);
-        border: 1px solid var(--color-primary);
+        border-color: rgb(11 107 58 / 0.35);
     }
     .btn-secondary:hover {
         background: var(--color-primary-soft);
+        border-color: var(--color-primary);
     }
-    /* Tombol di atas latar primary (hero). Kontras putih/primary = 9.51:1 */
+    /* Tombol di atas latar hijau (hero). Kontras putih/hijau = 6,61:1 */
     .btn-on-dark {
         background: #fff;
         color: var(--color-primary);
-        border: 1px solid #fff;
+        border-color: #fff;
+        box-shadow: 0 1px 2px rgb(4 40 24 / 0.18), 0 6px 16px rgb(4 40 24 / 0.18);
     }
     .btn-on-dark:hover {
         background: var(--color-primary-soft);
+        box-shadow: 0 2px 4px rgb(4 40 24 / 0.2), 0 10px 22px rgb(4 40 24 / 0.22);
     }
     .btn-ghost-dark {
-        background: transparent;
+        background: rgb(255 255 255 / 0.1);
         color: #fff;
-        border: 1px solid rgb(255 255 255 / 0.75);
+        border-color: rgb(255 255 255 / 0.5);
     }
     .btn-ghost-dark:hover {
-        background: rgb(255 255 255 / 0.12);
+        background: rgb(255 255 255 / 0.18);
+        border-color: rgb(255 255 255 / 0.8);
     }
-    /* Varian kecil hanya untuk aksi sekunder di dalam tabel/desktop;
-       tinggi tetap 40px agar tidak jadi sasaran sentuh yang salah. */
     .btn-sm {
-        padding: 0.5rem 0.75rem;
+        padding: 0.45rem 0.9rem;
         font-size: var(--text-sm);
         min-height: 40px;
     }
@@ -289,6 +315,8 @@
     .btn[aria-disabled='true'] {
         opacity: 0.55;
         cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
     }
     .link {
         font-weight: 600;
@@ -308,33 +336,67 @@
     }
 
     /* --- Label & chip kategori --- */
+    /* Label kecil: huruf kapital dengan jarak lebar terasa "teknis/kaku".
+       Dikurangi: 0,06em, semibold, warna hijau gelap (bukan hijau penuh). */
     .eyebrow {
-        @apply text-2xs font-bold uppercase tracking-[0.12em] text-primary;
+        @apply text-2xs font-semibold uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-primary-strong);
     }
+    /* Chip berbentuk pil, garis lebih tipis, transisi halus. */
     .chip {
-        @apply inline-flex items-center gap-1.5 rounded-sm border
-               border-line-strong px-2.5 py-1 text-2xs font-semibold
-               text-body hover:bg-surface;
-        min-height: 32px;
+        @apply inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold
+               text-body;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-pill);
+        background: var(--color-page);
+        min-height: 36px;
+        transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+    .chip:hover {
+        background: var(--color-primary-soft);
+        border-color: rgb(11 107 58 / 0.4);
+        color: var(--color-primary-strong);
+    }
+    .chip[aria-current='true'] {
+        background: var(--color-primary-soft);
+        border-color: rgb(11 107 58 / 0.45);
+        color: var(--color-primary-strong);
     }
 
     /* --- Kartu --- */
+    /* Kartu: sudut 14px, garis sangat tipis, bayangan dua lapis.
+       Hover hanya mengubah bayangan & garis (halus), bukan posisi. */
     .card {
         @apply rounded-md border border-line bg-page shadow-card;
     }
+    /* Garis kartu lebih tipis dari 1px keras: 0.5px tidak didukung semua
+       perangkat, jadi warna garis dibuat jauh lebih tenang. */
     .card-link {
-        @apply block rounded-md border border-line bg-page shadow-card
-               transition-colors duration-150 hover:border-primary;
+        @apply block rounded-md border border-line bg-page shadow-card;
+        transition: box-shadow 200ms ease, border-color 200ms ease, transform 200ms ease;
+    }
+    .card-link:hover {
+        border-color: rgb(11 107 58 / 0.35);
+        box-shadow: 0 2px 6px rgb(16 32 36 / 0.06), 0 12px 28px rgb(16 32 36 / 0.1);
+        transform: translateY(-2px);
     }
 
     /* --- Garis aksen kiri untuk pengumuman (bukan warna saja: teks
            kategori tetap menyebut jenisnya) --- */
     .notice {
         @apply relative block border-b border-line py-4 pl-4;
+        transition: background-color 180ms ease;
     }
     .notice::before {
         content: '';
-        @apply absolute left-0 top-4 bottom-4 w-1 rounded-sm bg-accent;
+        position: absolute;
+        left: 0;
+        top: 1rem;
+        bottom: 1rem;
+        width: 3px;
+        border-radius: var(--radius-pill);
+        background: var(--color-accent);
     }
 
     /* --- Tabel responsif ---------------------------------------------
@@ -347,14 +409,17 @@
         @apply hidden md:table-header-group;
     }
     .data-table th {
-        @apply bg-surface px-3 py-3 text-sm font-bold text-body align-bottom
-               border-b border-line-strong;
+        @apply bg-surface px-3 py-3 text-sm font-bold text-body align-bottom;
+        border-bottom: 1px solid var(--color-line-strong);
     }
     .data-table td {
         @apply px-3 py-3 align-top border-b border-line;
     }
     .data-table tbody tr:nth-child(even) {
-        @apply bg-surface;
+        background: #f7f8f7;
+    }
+    .data-table tbody tr {
+        transition: background-color 150ms ease;
     }
     @media (width < 48rem) {
         .data-table,
@@ -399,10 +464,28 @@
     .hint {
         @apply mb-2 mt-1 block text-sm text-body-soft;
     }
+    /* Input memakai pil yang sama dengan tombol: sebelumnya tombol pil dan
+       input bersudut 8px tampak tidak satu bahasa di baris yang sama. */
     .input {
-        @apply block w-full rounded-sm border border-line-strong bg-page
-               px-3 py-2.5 text-base text-body placeholder:text-body-soft;
+        @apply block w-full bg-page px-4 py-2.5 text-base text-body;
+        border: 1px solid var(--color-line-strong);
+        border-radius: var(--radius-pill);
         min-height: 44px;
+        color: var(--color-body);
+        transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+    .input::placeholder {
+        color: var(--color-body-soft);
+        opacity: 1;
+    }
+    .input:hover {
+        border-color: #6b7a70;
+    }
+    /* Cincin fokus lembut (bukan garis tebal mendadak). */
+    .input:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 4px rgb(11 107 58 / 0.14);
     }
     .input:disabled {
         @apply bg-surface;

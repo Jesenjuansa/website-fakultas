@@ -21,7 +21,9 @@
 
 {{-- 1. HERO. Tanpa slider/carousel: konten penting yang bergerak otomatis
      tidak terbaca di HP dan tidak bisa dihentikan pembaca layar. --}}
-<section class="relative isolate overflow-hidden bg-primary text-white">
+{{-- Gradasi halus dari hijau PANTONE 349 ke versi lebih gelap: blok rata
+     terasa berat di layar lebar. Gambar latar tetap ada di bawahnya. --}}
+<section class="relative isolate overflow-hidden text-white bg-[linear-gradient(155deg,#0a7a43_0%,#046a38_45%,#034f2a_100%)]">
     {{-- Gambar latar dipasang sebagai <img> (bukan CSS) supaya bisa diberi
          alt & width/height. Overlay gelap 90%/78% memastikan kontras teks
          putih tetap >=4.5:1 apa pun terangnya foto di bawahnya. --}}
@@ -34,15 +36,14 @@
              loading="eager" fetchpriority="high" decoding="async"
              class="absolute inset-0 -z-10 h-full w-full object-cover">
     </picture>
-    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[#062630]/92 md:bg-[#062630]/80"></div>
+    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[#02291a]/80 md:bg-[#02291a]/70"></div>
 
-    <div class="container-page py-10 md:py-16 lg:py-20">
+    <div class="container-page py-11 md:py-16 lg:py-20">
         <div class="max-w-3xl">
-            <p class="text-sm font-semibold text-[#cfe0e4]">Universitas Contoh Raya (Contoh)</p>
-            <h1 class="mt-2 text-hero font-bold leading-tight md:text-hero-d">
+            <h1 class="mt-2 text-hero font-semibold leading-tight md:text-hero-d">
                 Fakultas Ilmu Komputer
             </h1>
-            <p class="mt-3 text-lg text-[#e8f1f3]">
+            <p class="mt-3 text-lg text-[#e9f3ec]">
                 Informasi resmi program studi, penerimaan mahasiswa baru, akademik, dan dosen.
             </p>
 
@@ -53,13 +54,13 @@
                  garis itu nyaris tak terlihat sehingga tombol terbaca sebagai
                  teks biasa. Semua memakai latar putih/krem supaya jelas bisa
                  ditekan; yang pertama lebih padat karena paling sering dipakai. --}}
-            <div class="mt-6 flex flex-wrap gap-3">
-                <a href="penerimaan.html" class="btn btn-on-dark">Calon Mahasiswa</a>
-                <a href="akademik.html" class="btn btn-on-dark">Mahasiswa Aktif</a>
-                <a href="profil.html" class="btn btn-on-dark">Dosen &amp; Staf</a>
+            <div class="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
+                <a href="penerimaan.html" class="btn btn-on-dark w-full sm:w-auto">Calon Mahasiswa</a>
+                <a href="akademik.html" class="btn btn-on-dark w-full sm:w-auto">Mahasiswa Aktif</a>
+                <a href="profil.html" class="btn btn-on-dark w-full sm:w-auto">Dosen &amp; Staf</a>
             </div>
 
-            <p class="mt-4 text-sm text-[#cfe0e4]">
+            <p class="mt-4 text-sm text-[#cfe5d8]">
                 Terakreditasi <strong class="text-white">B</strong> oleh LAM INFOKOM · Periode pendaftaran 1 Juni – 12 Desember 2026
             </p>
         </div>
@@ -72,7 +73,7 @@
 {{-- 3. PENCARIAN: jendela pertama HP pun sudah bisa langsung mencari. --}}
 <section class="border-b border-line bg-page">
     <div class="container-page py-6 md:py-8">
-        <h2 class="text-lg font-bold text-body">Cari yang Anda butuhkan</h2>
+        <h2 class="text-lg font-semibold text-body">Cari yang Anda butuhkan</h2>
         <div class="mt-3">
             @include('components.search-box')
         </div>
@@ -84,7 +85,7 @@
 <section class="container-page py-8 md:py-10">
     <div class="grid gap-4 md:grid-cols-2">
         <div class="card p-5">
-            <h2 class="text-xl font-bold">Calon mahasiswa</h2>
+            <h2 class="text-xl font-semibold">Calon mahasiswa</h2>
             <p class="mt-1 text-sm text-body-soft">Anda SMA/SMK dan ingin mendaftar.</p>
             <ul class="mt-3 divide-y divide-line">
                 @foreach ([['Alur & syarat pendaftaran', 'penerimaan.html#alur'], ['Biaya kuliah', 'penerimaan.html#biaya'], ['Beasiswa', 'penerimaan.html#beasiswa'], ['Pilihan program studi', 'program-studi.html']] as [$l, $u])
@@ -93,7 +94,7 @@
             </ul>
         </div>
         <div class="card p-5">
-            <h2 class="text-xl font-bold">Mahasiswa aktif</h2>
+            <h2 class="text-xl font-semibold">Mahasiswa aktif</h2>
             <p class="mt-1 text-sm text-body-soft">Anda sudah terdaftar dan butuh layanan akademik.</p>
             <ul class="mt-3 divide-y divide-line">
                 @foreach ([['Jadwal kuliah', 'akademik.html#jadwal'], ['Kalender akademik', 'akademik.html#kalender'], ['Pengumuman', 'pengumuman.html'], ['Unduhan formulir & dokumen', 'unduhan.html']] as [$l, $u])
@@ -109,7 +110,7 @@
 <section class="bg-surface border-y border-line">
     <div class="container-page py-8 md:py-10">
         <div class="flex flex-wrap items-end justify-between gap-3">
-            <h2 class="text-2xl font-bold">Pengumuman terbaru</h2>
+            <h2 class="text-2xl font-semibold">Pengumuman terbaru</h2>
             <a href="pengumuman.html" class="link">Semua pengumuman</a>
         </div>
         <ul class="mt-4 divide-y divide-line border-y border-line">
@@ -137,7 +138,7 @@
      prodi: itu pembeda pertama yang dicari calon mahasiswa. --}}
 <section class="container-page py-8 md:py-10">
     <div class="flex flex-wrap items-end justify-between gap-3">
-        <h2 class="text-2xl font-bold">Program studi</h2>
+        <h2 class="text-2xl font-semibold">Program studi</h2>
         <a href="program-studi.html" class="link">Semua program studi</a>
     </div>
     @php
@@ -150,7 +151,7 @@
     <div class="mt-4 grid gap-4 md:grid-cols-3">
         @foreach ($prodi as [$nama, $gelar, $akr, $url])
             <a href="{{ $url }}" class="card-link p-5">
-                <h3 class="text-lg font-bold text-body">{{ $nama }}</h3>
+                <h3 class="text-lg font-semibold text-body">{{ $nama }}</h3>
                 <p class="text-sm text-body-soft">{{ $gelar }}</p>
                 <p class="mt-3 flex items-center gap-2 text-sm font-semibold text-success">
                     <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 13 4 4L19 7"/></svg>
@@ -166,7 +167,7 @@
 <section class="bg-surface border-y border-line">
     <div class="container-page py-8 md:py-10">
         <div class="flex flex-wrap items-end justify-between gap-3">
-            <h2 class="text-2xl font-bold">Berita terbaru</h2>
+            <h2 class="text-2xl font-semibold">Berita terbaru</h2>
             <a href="berita.html" class="link">Semua berita</a>
         </div>
         <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -182,7 +183,7 @@
 <section class="container-page py-8 md:py-10">
     <div class="grid gap-6 md:grid-cols-2">
         <div>
-            <h2 class="text-2xl font-bold">Hubungi kami</h2>
+            <h2 class="text-2xl font-semibold">Hubungi kami</h2>
             <p class="mt-2 text-measure text-body-soft">Jika informasi di situs ini belum menjawab kebutuhan Anda, hubungi kami pada jam layanan berikut.</p>
             <dl class="mt-4 space-y-2 text-base">
                 <div class="flex gap-2"><dt class="w-24 shrink-0 font-semibold">Alamat</dt><dd>Jl. Contoh Raya No. 1, Kota Contoh</dd></div>
@@ -193,7 +194,7 @@
             <a href="profil.html#kontak" class="btn btn-secondary mt-4">Semua kontak</a>
         </div>
         <div class="card p-5">
-            <h3 class="text-lg font-bold">Informasi penerimaan</h3>
+            <h3 class="text-lg font-semibold">Informasi penerimaan</h3>
             <p class="mt-1 text-sm text-body-soft">Pertanyaan calon mahasiswa paling sering dijawab di sini.</p>
             <ul class="mt-3 divide-y divide-line">
                 <li><a href="penerimaan.html#biaya" class="flex min-h-[44px] items-center justify-between font-semibold text-primary underline">Biaya kuliah per jalur <span aria-hidden="true">›</span></a></li>

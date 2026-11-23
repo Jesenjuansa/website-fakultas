@@ -3,7 +3,7 @@
      mencari fakta ini dalam 5 detik pertama. --}}
 @php
     $facts = $facts ?? [
-        ['label' => 'Akreditasi', 'value' => 'B (contoh)', 'note' => 'LAM INFOKOM · SK No. 0000/SK/LAM/CONTOH/2025'],
+        ['label' => 'Akreditasi', 'value' => 'B', 'note' => 'LAM INFOKOM · SK No. 0000/SK/LAM/CONTOH/2025 (data contoh)'],
         ['label' => 'Program studi', 'value' => '3', 'note' => 'D3 dan S1'],
         ['label' => 'Dosen', 'value' => '42', 'note' => '11 bergelar doktor'],
         ['label' => 'Tahun berdiri', 'value' => '2001', 'note' => ''],
@@ -27,5 +27,11 @@
                 </div>
             @endforeach
         </dl>
+        {{-- Periode pendaftaran: dipindah dari hero. Di HP, teks kecil di atas
+             ilustrasi terang sulit dibaca; di sini latarnya putih bersih. --}}
+        <p class="pb-5 text-sm text-body">
+            <strong class="font-semibold">Periode pendaftaran 1 Juni sampai 12 Desember 2026.</strong>
+            <a class="link" href="penerimaan.html">Lihat syarat dan biaya</a>
+        </p>
     </div>
 </div>
